@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>pg15</title>
+    <!-- cordo2013 references -->
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/jquery-2.1.4.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+    <div id="home-page" data-role="page" data-theme="b">
+        <div data-role="header">דף הבית</div>
+        <div data-role="content">
+            <p>שלום <span id="name"></span></p><br />
+            <div id="msg" hidden></div>
+            <div>
+                <ul data-role="listview">
+                    <li><a href="#Device-page">Device</a></li>
+                    <li class="phone"><a href="#Accelarometer-page">Accelarometer</a></li>
+                    <li><a href="#Camera-page">Camera</a></li>
+                    <li><a href="#GeoLocation-page">GeoLocation</a></li>
+                    <li><a href="#Notification-page">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#Device-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(Device)</a></li>
+                        <li><a href="#second-page" class="ui-btn ui-icon-star ui-btn-icon-right">דף שני</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="second-page" data-role="page" data-theme="b">
+        <div data-role="header">דף שני</div>
+        <div data-role="content">
+            Hellow universe..
+            <a href="#home-page" data-role="button">home page</a><br />
+            <a href="#dialog" data-rel="dialog" data-role="button" data-icon="check">dialog</a><br />
+            <a href="#dialog" data-rel="dialog" data-icon="check">dialog</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar"><ul><li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li></ul></div>
+        </div>
+    </div>
+    <div id="dialog" data-role="page" data-theme="b">
+        <div data-role="header"><h4>כותרת דיאלוג</h4></div>
+        <div data-role="content">דיאלוג כעמוד.</div>
+    </div>
+
+    <div id="Device-page" data-role="page" data-theme="b">
+        <div data-role="header">Device</div>
+        <div data-role="content">
+            <p>cordova: <span id="dcordova"></span></p><p>model: <span id="dmodel"></span></p><p>platform: <span id="dplatform"></span></p><p>uuid: <span id="duuid"></span></p><p>version: <span id="dversion"></span></p><p>serial: <span id="dserial"></span></p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#Accelarometer-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(Accelarometer)</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Accelarometer-page" data-role="page" data-theme="b">
+        <div data-role="header">Accelarometer</div>
+        <div data-role="content">
+            <p id="aX"></p><p id="aY"></p><p id="aZ"></p><p id="aTime"></p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#Camera-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(Camera)</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Camera-page" data-role="page" data-theme="b">
+        <div data-role="header">Camera</div>
+        <div data-role="content">
+            <button id="btnTakePic" data-role="button" data-icon="camera">צלם תמונה</button>
+            <p id="imgUri"></p><img id="imgCamera" src="data:image/jpg;base64,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" />
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#GeoLocation-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(GeoLocation)</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="GeoLocation-page" data-role="page">
+        <div data-role="header">GeoLocation</div>
+        <div data-role="content">
+            <p>latitude: <span id="glatitude"></span></p><p>longitude: <span id="glongitude"></span></p><p>altitude: <span id="galtitude"></span></p><p>accuracy: <span id="gaccuracy"></span></p>
+            <p>altitudeAccuracy<span id="galtitudeAccuracy"></span></p><p>heading: <span id="gheading"></span></p><p>speed: <span id="gspeed"></span></p><p>timestamp: <span id="gtimestamp"></span></p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#Notification-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(Notification)</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Notification-page" data-role="page" data-theme="b">
+        <div data-role="header">Notification</div>
+        <div data-role="content">
+            <button id="btnNotiAlert" data-role="button" data-count="0">הודעה <span></span></button>
+            <button id="btnNotiConfirm" data-role="button">confirm beeps<span></span></button>
+            <button id="btnNotiPrompt" data-role="button"><span>שנה שם משתמש</span></button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class=".back-button ui-btn ui-icon-back ui-btn-icon-right" href="#home-page">הקודם</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-forward ui-btn-icon-right" data-transition="flip">הבא(דף הבית)</a></li>
+                        <li><a href="#home-page" class="ui-btn ui-icon-home ui-btn-icon-right">דף הבית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

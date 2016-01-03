@@ -1,0 +1,10 @@
+﻿body {
+}
+
+#imgCamera {
+    width: 95%;
+    height: 95%;
+    border-style: double;
+    border-color: saddlebrown;
+    border-width: 3px;
+}
